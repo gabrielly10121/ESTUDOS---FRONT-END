@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificar Par ou Ímpar</title>
+    <script>
+        function verificarParOuImpar() {
+            // Obtém o valor do campo de entrada e o converte para um número
+            var numero = parseInt(document.getElementById('numero').value, 10);
+            
+            // Verifica se o valor é um número válido
+            if (!isNaN(numero)) {
+                // Verifica se o número é par ou ímpar
+                if (numero % 2 === 0) {
+                    document.getElementById('resultado').innerText = 
+                        'O número ' + numero + ' é par.';
+                } else {
+                    document.getElementById('resultado').innerText = 
+                        'O número ' + numero + ' é ímpar.';
+                }
+            } else {
+                // Exibe uma mensagem de erro se o valor não for um número válido
+                document.getElementById('resultado').innerText = 'Por favor, insira um número válido.';
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Verificador de Par ou Ímpar</h1>
+    <p>Digite um número:</p>
+    <input type="number" id="numero" placeholder="Número">
+    <button onclick="verificarParOuImpar()">Verificar</button>
+    <p id="resultado"></p>
+</body>
+</html>

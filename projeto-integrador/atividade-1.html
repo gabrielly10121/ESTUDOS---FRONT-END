@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensagem de Boas-Vindas</title>
+    <script>
+        function mostrarBoasVindas() {
+            // Obtém o valor do campo de entrada
+            var nome = document.getElementById('nome').value;
+            
+            // Verifica se o nome não está vazio
+            if (nome) {
+                // Exibe a mensagem de boas-vindas
+                document.getElementById('mensagem').innerText = 'Bem-vindo(a), ' + nome + '!';
+            } else {
+                // Exibe uma mensagem de erro se o campo estiver vazio
+                document.getElementById('mensagem').innerText = 'Por favor, insira seu nome.';
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Bem-vindo ao nosso site!</h1>
+    <p>Digite seu nome para receber uma mensagem de boas-vindas:</p>
+    <input type="text" id="nome" placeholder="Seu nome">
+    <button onclick="mostrarBoasVindas()">Enviar</button>
+    <p id="mensagem"></p>
+</body>
+</html>

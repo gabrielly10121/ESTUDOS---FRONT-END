@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Quilômetros para Metros</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Conversor de Quilômetros para Metros</h1>
+        <label for="kilometers">Digite a distância em quilômetros:</label>
+        <input type="number" id="kilometers" placeholder="Digite o valor em quilômetros" step="any">
+        <button onclick="convertToMeters()">Converter</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function convertToMeters() {
+            // Obtém o valor inserido pelo usuário
+            var kilometers = parseFloat(document.getElementById('kilometers').value);
+
+            // Verifica se o valor é um número válido
+            if (isNaN(kilometers)) {
+                document.getElementById('result').innerText = 'Por favor, insira um número válido.';
+                return;
+            }
+
+            // Converte para metros
+            var meters = kilometers * 1000;
+
+            // Exibe o resultado na página
+            document.getElementById('result').innerText = kilometers + ' quilômetros é igual a ' + meters + ' metros.';
+        }
+    </script>
+</body>
+</html>

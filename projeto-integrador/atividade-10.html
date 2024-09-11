@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Metros para Léguas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Conversor de Metros para Léguas</h1>
+        <label for="meters">Digite a distância em metros:</label>
+        <input type="number" id="meters" placeholder="Digite o valor em metros" step="any">
+        <button onclick="convertToLeagues()">Converter</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function convertToLeagues() {
+            // Obtém o valor inserido pelo usuário
+            var meters = parseFloat(document.getElementById('meters').value);
+
+            // Verifica se o valor é um número válido
+            if (isNaN(meters)) {
+                document.getElementById('result').innerText = 'Por favor, insira um número válido.';
+                return;
+            }
+
+            // Define o valor de uma légua em metros
+            var metersPerLeague = 5556;
+
+            // Converte para léguas
+            var leagues = meters / metersPerLeague;
+
+            // Exibe o resultado na página
+            document.getElementById('result').innerText = meters + ' metros é igual a ' + leagues.toFixed(4) + ' léguas.';
+        }
+    </script>
+</body>
+</html>

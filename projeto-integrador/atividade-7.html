@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números de 1 a 10</title>
+    <script>
+        function imprimirNumeros() {
+            // Obtém o elemento onde os números serão exibidos
+            var resultado = document.getElementById('resultado');
+            
+            // Limpa qualquer conteúdo anterior
+            resultado.innerHTML = '';
+
+            // Loop para imprimir os números de 1 a 10
+            for (var i = 1; i <= 10; i++) {
+                // Cria um elemento de lista para cada número
+                var item = document.createElement('li');
+                item.textContent = i;
+                resultado.appendChild(item);
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Números de 1 a 10</h1>
+    <button onclick="imprimirNumeros()">Imprimir Números</button>
+    <ul id="resultado"></ul>
+</body>
+</html>

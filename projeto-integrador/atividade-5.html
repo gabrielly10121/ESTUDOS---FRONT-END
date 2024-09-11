@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo da Média de Notas</title>
+    <script>
+        function calcularMedia() {
+            // Obtém os valores dos campos de entrada e os converte para números
+            var nota1 = parseFloat(document.getElementById('nota1').value);
+            var nota2 = parseFloat(document.getElementById('nota2').value);
+            var nota3 = parseFloat(document.getElementById('nota3').value);
+            
+            // Verifica se todos os valores são números válidos
+            if (!isNaN(nota1) && !isNaN(nota2) && !isNaN(nota3)) {
+                // Calcula a média aritmética
+                var media = (nota1 + nota2 + nota3) / 3;
+                
+                // Exibe o resultado
+                document.getElementById('resultado').innerText = 
+                    'A média das notas é ' + media.toFixed(2);
+            } else {
+                // Exibe uma mensagem de erro se algum dos valores não for um número válido
+                document.getElementById('resultado').innerText = 'Por favor, insira três notas válidas.';
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Cálculo da Média de Notas</h1>
+    <p>Digite as três notas:</p>
+    <input type="number" id="nota1" placeholder="Nota 1" step="any"><br><br>
+    <input type="number" id="nota2" placeholder="Nota 2" step="any"><br><br>
+    <input type="number" id="nota3" placeholder="Nota 3" step="any"><br><br>
+    <button onclick="calcularMedia()">Calcular Média</button>
+    <p id="resultado"></p>
+</body>
+</html>
